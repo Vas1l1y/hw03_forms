@@ -4,9 +4,7 @@ from .forms import PostForm
 from .models import Post, Group, User
 from django.core.paginator import Paginator
 
-
 TEN = 10
-
 
 def index(request):
     post_list = Post.objects.all()
@@ -27,7 +25,6 @@ def group_posts(request, slug):
     paginator = Paginator(posts, 10)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    
     title = f'Записи сообщества {group}'
     context = {
         'group': group,
