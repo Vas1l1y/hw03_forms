@@ -15,12 +15,13 @@
       </li>
     </ul>      
     <p>
-      {{ post.text|linebreaksbr }}
+      {{ post.text|linebreaksbr }}</br>
+      <a href="{% url 'posts:post_detail' post.id %}">
+        подробная информация </a>
       {% if not forloop.last %} <hr> {% endif %}
       {% endfor %}
-    </p>         
+    </p>
   </article>
   <hr>
-  <!-- под последним постом нет линии -->
 </div>
 {% endblock %}  
